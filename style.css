@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  background: black;
+  overflow: hidden;
+}
+
+/* Botón */
+#btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 15px 30px;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  background: pink;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* Canvas */
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#mensaje {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  color: white;
+  font-size: 2.5em;
+  text-align: center;
+  opacity: 0;
+  transition: all 2s ease;
+  text-shadow: 0 0 20px rgba(255,255,255,0.8);
+}
+
+/* Cuando aparece */
+#mensaje.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+/* texto principal */
+#mensaje {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  opacity: 1;
+  text-shadow: 0 0 15px rgba(255,255,255,0.8);
+  z-index: 2;
+}
+
+/* contador */
+#contador {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  z-index: 2;
+}
+
+/* 💖 fondo animado */
+body::before {
+  content: "";
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, #ff4d6d, #000);
+  animation: moverFondo 12s infinite alternate;
+  z-index: 0;
+}
+
+@keyframes moverFondo {
+  from { transform: translate(-20%, -20%); }
+  to { transform: translate(0%, 0%); }
+}
+
+#mensaje {
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+#mensaje.show {
+  opacity: 1;
+}
